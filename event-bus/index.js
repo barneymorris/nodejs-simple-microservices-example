@@ -4,14 +4,14 @@ const axios = require("axios");
 
 const app = express();
 
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 app.post("/events", (req, res) => {
   const event = req.body;
 
   axios.post("http://localhost:9944/events", event);
   axios.post("http://localhost:9945/events", event);
-  axios.post("http://localhost:9946/events", event);
+  axios.post("http://localhost:9947/events", event);
 
   res.send({ status: "OK" });
 });
